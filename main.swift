@@ -32,26 +32,26 @@ struct SportCar {
     var filledTrunkVolume: Int = 0 {
         didSet {
             if oldValue>filledTrunkVolume {
-                print ("Из багажника убрали \(oldValue - filledTrunkVolume) литров груза")
+                print ("Из багажника \(carColor + " " + carModel) убрали \(oldValue - filledTrunkVolume) литров груза")
             } else {
-                print ("В багажник загрузили еще \(filledTrunkVolume - oldValue) литров груза")
+                print ("В багажник \(carColor + " " + carModel) загрузили еще \(filledTrunkVolume - oldValue) литров груза")
             }
         }
     }
     var carKM: Int {
         didSet{
-            print ("Машина проехала еще \(carKM-oldValue) км")
+            print ("Машина \(carColor + " " + carModel) проехала еще \(carKM-oldValue) км")
         }
     }
     var windows: WindowsStatus {
         willSet {
-            print ("Теперь окна \(windows.rawValue)")
+            print ("Теперь окна у машины \(carColor + " " + carModel) \(windows.rawValue)")
             }
         }
     
     var engine: EngineStatus {
         willSet {
-            print ("Теперь двигатель \(engine.rawValue)")
+            print ("Теперь двигатель у \(carColor + " " + carModel) \(engine.rawValue)")
             }
         }
     
@@ -83,29 +83,28 @@ struct TrunkCar {
     var filledTrunkVolume: Int = 0 {
         didSet {
             if oldValue>filledTrunkVolume {
-                print ("Из багажника убрали \(oldValue - filledTrunkVolume) литров груза")
+                print ("Из багажника \(carColor + " " + carModel) убрали \(oldValue - filledTrunkVolume) литров груза")
             } else {
-                print ("В багажник загрузили еще \(filledTrunkVolume - oldValue) литров груза")
+                print ("В багажник \(carColor + " " + carModel) загрузили еще \(filledTrunkVolume - oldValue) литров груза")
             }
         }
     }
     var carKM: Int {
         didSet{
-            print ("Машина проехала еще \(carKM-oldValue) км")
+            print ("Машина \(carColor + " " + carModel) проехала еще \(carKM-oldValue) км")
         }
     }
     var windows: WindowsStatus {
         willSet {
-            print ("Теперь окна \(windows.rawValue)")
+            print ("Теперь окна у машины \(carColor + " " + carModel) \(windows.rawValue)")
             }
         }
     
     var engine: EngineStatus {
         willSet {
-            print ("Теперь двигатель \(engine.rawValue)")
+            print ("Теперь двигатель у \(carColor + " " + carModel) \(engine.rawValue)")
             }
         }
-    
     func allSettingPrint(){
         print ("""
      
@@ -128,7 +127,7 @@ struct TrunkCar {
 
 var firstCar = SportCar(carModel: "БМВ", carBody: .coupe, carYear: 2019, carColor: "зеленый", trunkVolume: 650, filledTrunkVolume: 100, carKM: 150, windows: .closed, engine: .running)
 var secondCar = SportCar(carModel: "Тесла", carBody: .sedan, carYear: 2015, carColor: "красный", trunkVolume: 400, filledTrunkVolume: 225, carKM: 150000, windows: .closed, engine: .muted)
-var trunkCar = TrunkCar(carModel: "Мерседес", carBody: .truck, numberOfSeats: 5, numberOfWheels: 10, carYear: 2005, carColor: "Черный", trunkVolume: 2300, filledTrunkVolume: 400, carKM: 400000, windows: .opened, engine: .running)
+var trunkCar = TrunkCar(carModel: "Мерседес", carBody: .truck, numberOfSeats: 5, numberOfWheels: 10, carYear: 2005, carColor: "черный", trunkVolume: 2300, filledTrunkVolume: 400, carKM: 400000, windows: .opened, engine: .running)
 
 firstCar.windows = .opened
 secondCar.engine = .muted
